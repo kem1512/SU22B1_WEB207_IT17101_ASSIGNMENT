@@ -4,37 +4,37 @@ app.config(function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix('')
     $routeProvider
         .when('/contact', {
-            templateUrl: './contact.html'
+            templateUrl: './View./contact.html'
         })
         .when('/register', {
-            templateUrl: './register.html'
+            templateUrl: './View/register.html'
         })
         .when('/login', {
-            templateUrl: './login.html',
+            templateUrl: './View/login.html',
         })
         .when('/forgot', {
-            templateUrl: './forgot.html'
+            templateUrl: './View/forgot.html'
         })
         .when('/about', {
-            templateUrl: './about.html'
+            templateUrl: './View/about.html'
         })
         .when('/feedback', {
-            templateUrl: './feedback.html'
+            templateUrl: './View/feedback.html'
         })
         .when('/subject', {
-            templateUrl: './subject.html'
+            templateUrl: './View/subject.html'
         })
         .when('/faq', {
-            templateUrl: './faq.html'
+            templateUrl: './View/faq.html'
         })
         .when('/changepass', {
-            templateUrl: './changepass.html'
+            templateUrl: './View/changepass.html'
         })
         .when('/profile', {
-            templateUrl: './profile.html',
+            templateUrl: './View/profile.html',
         })
         .when('/quizz', {
-            templateUrl: './quizz.html'
+            templateUrl: './View/quizz.html'
         })
         .when('/account', {
             templateUrl: '../Admin/account.html',
@@ -46,7 +46,7 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: './history.html',
         })
         .otherwise({
-            templateUrl: './subject.html',
+            templateUrl: './View/subject.html',
         })
 })
 
