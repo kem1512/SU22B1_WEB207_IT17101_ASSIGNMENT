@@ -1,0 +1,92 @@
+<div class="card border-0 shadow rounded-3" ng-controller="quizz">
+    <div class="card-body p-4 p-sm-5">
+        <div class="row">
+            <div ng-show="!inProcess" class="text-center">
+                <a href="" class="btn btn-primary text-end" ng-click="start()"> Bắt đầu thi</a>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12" ng-show="inProcess">
+                <div>
+                    <h2 class="text-center mb-4">Lập trình Android cơ bản</h2>
+                    <h2 class="text-end text-danger">{{m}}:{{s}}</h2>
+                </div>
+                <form>
+                    <div class="row">
+                        <div class="col-12 col-lg-2 col-xl-2">
+                            <div class="row">
+                                <div class="col-2 page" ng-repeat="qt in list_quizz">
+                                    <a ng-click="page($index)" class="btn btn-primary mb-3">{{$index + 1}}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-10 col-xl-10 mb-3" ng-show="$index == index"
+                            ng-repeat="qt in list_quizz">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <h5 class="card-title">Câu {{$index + 1}}:&nbsp;&nbsp;<span
+                                                    class="card-text fw-light text-break" ng-bind="qt.question"></span>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-12 col-xl-6 mb-1">
+                                            <div class="form-check">
+                                                <input value="1" class="form-check-input" type="radio"
+                                                    name="answers_{{qt.id}}" id="flexRadioDefault1">
+                                                <label class="form-check-label text-break" for="flexRadioDefault1"
+                                                    ng-bind="qt.answers_1">
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-xl-6 mb-1">
+                                            <div class="form-check">
+                                                <input value="2" class="form-check-input" type="radio"
+                                                    name="answers_{{qt.id}}" id="flexRadioDefault2">
+                                                <label class="form-check-label  text-break" for="flexRadioDefault2"
+                                                    ng-bind="qt.answers_2">
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-xl-6 mt-2">
+                                            <div class="form-check">
+                                                <input value="3" class="form-check-input" type="radio"
+                                                    name="answers_{{qt.id}}" id="flexRadioDefault3">
+                                                <label class="form-check-label text-break" for="flexRadioDefault3"
+                                                    ng-bind="qt.answers_3">
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-xl-6 mt-2">
+                                            <div class="form-check">
+                                                <input value="4" class="form-check-input" type="radio"
+                                                    name="answers_{{qt.id}}" id="flexRadioDefault4">
+                                                <label class="form-check-label  text-break" for="flexRadioDefault4"
+                                                    ng-bind="qt.answers_4">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-end">
+                            <a href="" class="btn btn-primary my-1" ng-click="complete()">
+                                Hoàn thành </a>
+                            <a href="" class="btn btn-primary my-1" ng-click="prev()">
+                                Câu trước </a>
+                            <a href="" class="btn btn-primary my-1" ng-click="next()"> Câu tiếp
+                                theo</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

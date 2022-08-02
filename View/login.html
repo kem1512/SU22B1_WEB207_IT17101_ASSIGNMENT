@@ -1,0 +1,41 @@
+<div class="card border-0 shadow rounded-3">
+    <div class="card-body p-4 p-sm-5">
+        <div class="row" ng-controller="login">
+            <div class="col d-none d-lg-block d-xl-block">
+                <img src="../images/login.webp" width="100%" alt="">
+            </div>
+            <div class="col">
+                <form>
+                    <h3 class="mb-4 text-center">Đăng nhập</h3>
+                    <div class="input-group mb-3 border">
+                        <span class="input-group-text px-4 bg-white border-0" id="basic-addon1"><i
+                                class="fa-solid fa-user fs-5"></i></span>
+                        <input type="text" class="form-control py-3 border-0" placeholder="Username"
+                            aria-label="Username" ng-model="student.username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3 border">
+                        <span class="input-group-text px-4 bg-white border-0" id="basic-addon1"><i
+                                class="fa-solid fa-lock fs-5"></i></span>
+                        <input type="password" class="form-control py-3 border-0" placeholder="Mật khẩu"
+                            aria-label="Username" ng-model="student.password" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="row m-0 mb-3">
+                        <div class="col p-0 d-flex justify-content-start">
+                            <a href="#register" class="text-decoration-none">Tạo tài khoản</a>
+                        </div>
+
+                        <div class="col p-0 d-flex justify-content-end">
+                            <a href="#forgot" class="text-decoration-none">Quên mật khẩu?</a>
+                        </div>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-login text-uppercase fw-bold py-2" ng-click="onLogin()"
+                            type="submit">Đăng
+                            nhập</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

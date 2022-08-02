@@ -1,0 +1,136 @@
+<div class="card border-0 shadow rounded-3" ng-controller="m-quizz">
+    <div class="card-body p-4 p-sm-5">
+        <form name="quizz">
+            <h3 class="mb-5 text-center">Quản lý câu hỏi</h3>
+            <div class="row">
+                <div class="col-12">
+                    <div class="input-group mb-3 border">
+                        <span class="input-group-text px-4 bg-white border-0"><i
+                                class="fa-solid fa-user-astronaut fs-4"></i></i></span>
+                        <input type="text" class="form-control py-3 border-0" placeholder="Câu hỏi"
+                            ng-model="quizz.question" required>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-group mb-3 border">
+                        <span class="input-group-text px-4 bg-white border-0"><i
+                                class="fa-solid fa-circle-question fs-4"></i></span>
+                        <input type="text" class="form-control py-3 border-0" placeholder="Đáp án 1"
+                            ng-model="quizz.answers_1" required>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-group mb-3 border">
+                        <span class="input-group-text px-4 bg-white border-0"><i
+                                class="fa-solid fa-circle-question fs-4"></i></span>
+                        <input type="text" class="form-control py-3 border-0" placeholder="Đáp án 2"
+                            ng-model="quizz.answers_2" required>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-group mb-3 border">
+                        <span class="input-group-text px-4 bg-white border-0"><i
+                                class="fa-solid fa-circle-question fs-4"></i></span>
+                        <input type="text" class="form-control py-3 border-0" placeholder="Đáp án 3"
+                            ng-model="quizz.answers_3" required>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-group mb-3 border">
+                        <span class="input-group-text px-4 bg-white border-0"><i
+                                class="fa-solid fa-circle-question fs-4"></i></span>
+                        <input type="text" class="form-control py-3 border-0" placeholder="Đáp án 4"
+                            ng-model="quizz.answers_4" required>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="input-group mb-3 border">
+                        <span class="input-group-text px-4 bg-white border-0"><i
+                                class="fa-solid fa-circle-question fs-4"></i></span>
+                        <input type="number" class="form-control py-3 border-0" placeholder="Đáp án đúng"
+                            ng-model="quizz.answers_true" min="1" max="4">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary text-uppercase fw-bold py-2" ng-click="onAdd()">Thêm</button>
+                <button class="btn btn-danger text-uppercase fw-bold py-2" ng-click="onEdit(quizz.id)">Cập nhật</button>
+                <button class="btn btn-info text-light text-uppercase fw-bold py-2" ng-click="onClear()">Làm
+                    mới</button>
+            </div>
+
+            <div class="row">
+                <div ng-repeat="qt in list_quizz" class="col-12 col-sm-12 col-md-12 col-lg-6">
+                    <div class="card mb-3">
+                        <div class="row g-0 p-4 align-items-center">
+                            <div class="col-12 col-lg-10 col-xl-12 mb-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-9">
+                                                <h5 class="card-title">Câu {{$index}}:&nbsp;&nbsp;<span
+                                                        class="card-text fw-light text-break"
+                                                        ng-bind="qt.question"></span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-12 col-xl-6 mb-1">
+                                                <div class="form-check">
+                                                    <span>1.</span>
+                                                    <label class="form-check-label fw-bold text-break"
+                                                        for="flexRadioDefault1" ng-bind="qt.answers_1">
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-xl-6 mb-1">
+                                                <div class="form-check">
+                                                    <span>2.</span>
+                                                    <label class="form-check-label fw-bold text-break"
+                                                        for="flexRadioDefault2" ng-bind="qt.answers_2">
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-xl-6 mt-2">
+                                                <div class="form-check">
+                                                    <span>3.</span>
+                                                    <label class="form-check-label fw-bold text-break"
+                                                        for="flexRadioDefault3" ng-bind="qt.answers_3">
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-xl-6 mt-2">
+                                                <div class="form-check">
+                                                    <span>4.</span>
+                                                    <label class="form-check-label fw-bold text-break"
+                                                        for="flexRadioDefault4" ng-bind="qt.answers_4">
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 text-center my-3">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <a href="" class="btn btn-primary w-75"
+                                                            ng-click="onDisplay($index)">Sửa</a>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <a href="" class="btn btn-danger w-75"
+                                                            ng-click="onDelete($index)">Xóa</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

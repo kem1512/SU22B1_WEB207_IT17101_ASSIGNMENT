@@ -1,0 +1,28 @@
+<div class="card border-0 shadow rounded-3" ng-controller="history">
+    <div class="card-body p-4 p-sm-5">
+        <h1>Lịch sử làm bài thi</h1>
+        <table class="table table-bordered align-middle text-center">
+            <thead>
+                <tr>
+                    <th class="p-3">Mã bài thi</th>
+                    <th class="p-3">Username</th>
+                    <th class="p-3">Tên bài thi</th>
+                    <th class="p-3">Thời gian làm bài</th>
+                    <th class="p-3">Điểm</th>
+                    <th class="p-3"  ng-if="student.role">Thao tác</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="h in history | filter:filerRole()">
+                   <td class="p-3">{{h.id}}</td> 
+                   <td class="p-3">{{h.username}}</td> 
+                   <td class="p-3">Lập trình C#</td> 
+                   <td class="p-3">{{h.time_check|date:'dd-MM-yyyy h:m:s'}}</td> 
+                   <td class="p-3">{{h.score}} / {{h.length}}</td> 
+                   <th class="p-3" ng-if="student.role"><a href="" class="btn btn-danger" ng-click="onDelete($index)">Xóa</a></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

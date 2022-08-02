@@ -1,0 +1,60 @@
+<div class="card border-0 shadow rounded-3">
+    <div class="card-body p-4 p-sm-5">
+        <div class="text-end">
+            <a href="#account" type="button" class="btn btn-primary" ng-if="student.role == true">
+                Quản lý tài khoản
+            </a>
+        </div>
+        <form ng-controller="profile">
+            <h3 class="mb-4 text-center">Cập nhật tài khoản</h3>
+            <div class="input-group mb-3 border">
+                <span class="input-group-text px-4 bg-white border-0"><i class="fa-solid fa-user fs-4"></i></span>
+                <input type="text" class="form-control py-3 border-0" placeholder="Họ và tên" ng-model="st.username">
+            </div>
+            <div class="input-group mb-3 border">
+                <span class="input-group-text px-4 bg-white border-0"><i class="fa-solid fa-envelope fs-4"></i></span>
+                <input type="text" class="form-control py-3 border-0" placeholder="Địa chỉ email" ng-model="st.email">
+            </div>
+            <div class="input-group mb-3 border">
+                <span class="input-group-text px-4 bg-white border-0"><i
+                        class="fa-solid fa-cake-candles fs-4"></i></span>
+                <input type="date" class="form-control py-3 border-0" placeholder="Ngày sinh" ng-model='st.birthday'>
+            </div>
+            <div class="input-group mb-3 border">
+                <span class="input-group-text px-4 bg-white border-0"><i class="fa-solid fa-venus-mars"></i></span>
+                <div class="row py-3">
+                    <div class="col-6">
+                        <div class="form-check">
+                            <input ng-value="true" ng-model="st.gender" name="gender" class="form-check-input"
+                                type="radio" id="flexRadioDefault1" required>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Nam
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-check">
+                            <input ng-value="false" ng-model="st.gender" name="gender" class="form-check-input"
+                                type="radio" id="flexRadioDefault2" required>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Nữ
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group mb-3 border">
+                <span class="input-group-text px-4 bg-white border-0"><i class="fa-solid fa-money-bill fs-4"></i></span>
+                <input type="text" class="form-control py-3 border-0" placeholder="Học phí" ng-model="st.schoolfee">
+            </div>
+            <div class="input-group mb-3 border">
+                <span class="input-group-text px-4 bg-white border-0"><i class="fa-solid fa-marker fs-4"></i></span>
+                <input type="text" class="form-control py-3 border-0" placeholder="Điểm" ng-model="st.marks">
+            </div>
+            <div class="d-grid">
+                <button class="btn btn-primary btn-login text-uppercase fw-bold py-2" type="submit" ng-click="onUpdate()">Cập nhật
+                    ngay</button>
+            </div>
+        </form>
+    </div>
+</div>

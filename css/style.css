@@ -1,0 +1,87 @@
+.navbar-brand {
+    background: linear-gradient(90deg, #e8ff17, #63ffa1, #0bfff4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-item {
+    margin: auto 10px;
+}
+
+option{
+    font-size: large;
+}
+
+.form-control:focus::placeholder {
+    color: transparent;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.btn:focus,
+.btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.nav-item:not(.active, .dropdown):after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width .3s;
+}
+
+.accordion-button:focus{
+    box-shadow: none;
+}
+
+.card{
+    animation-name: vip;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes vip {
+    from{
+        opacity: 0;
+        transform: translatex(-8%);
+    }
+    to{
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
+
+@media screen and (min-width: 414px) {
+    .page{
+        width: 12%;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .page{
+        width: 9%;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .page{
+        width: 33%;
+    }
+
+    .nav-item:hover::after {
+        width: 100%;
+    }
+
+    #navbarSupportedContent > .navbar-nav  > .active {
+        border-bottom: 3px solid white;
+    }
+}

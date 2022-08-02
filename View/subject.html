@@ -1,0 +1,33 @@
+<div class="card border-0 shadow rounded-3">
+    <div class="card-body p-4 p-sm-5">
+        <div class="row" ng-controller="subject">
+            <div ng-repeat="s in subjects|limitTo:4:begin" class="col-12 col-sm-12 col-md-12 col-lg-6">
+                <div class="card mb-3">
+                    <div class="row g-0 p-4 align-items-center">
+                        <div class="col-12 col-md-4 col-lg-12 col-xl-4 text-center">
+                            <img src="../images/logos/{{s.Logo}}" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-12 col-md-8 col-lg-12 col-xl-8">
+                            <div class="card-body">
+                                <h5 class="card-title" ng-bind="s.Name"></h5>
+                                <p class="card-text">Mại dô! Mại dô! Có chơi có thưởng. Hàng ngàn phần quà giá trị đang
+                                    chờ đón
+                                    bạn.</p>
+                                <a href="#quizz" class="btn w-100 btn-info text-light py-2">Test ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="my-3">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item px-1"><a ng-click="first()" class="page-link" href="">First</a></li>
+                    <li class="page-item px-1"><a ng-click="prev()" class="page-link" href="">Previous</a></li>
+                    <li class="page-item px-1"><a class="page-link">{{begin / 4 + 1}} / {{pageCount}}</a></li>
+                    <li class="page-item px-1"><a ng-click="next()" class="page-link" href="">Next</a></li>
+                    <li class="page-item px-1"><a ng-click="last()" class="page-link" href="">Last</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

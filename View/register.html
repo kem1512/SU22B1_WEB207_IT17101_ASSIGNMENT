@@ -1,0 +1,30 @@
+<div class="card border-0 shadow rounded-3" ng-controller="register">
+    <div class="card-body p-4 p-sm-5">
+        <div class="row">
+            <div class="col d-none d-lg-block d-xl-block">
+                <img src="../images/register.svg" width="100%" alt="">
+            </div>
+            <div class="col">
+                <form name="register">
+                    <h3 class="mb-4 text-center">Đăng ký</h3>
+                    <div class="input-group mb-3 border">
+                        <span class="input-group-text px-4 bg-white border-0"><i
+                                class="fa-solid fa-user fs-5"></i></span>
+                        <input type="text" class="form-control py-3 border-0" placeholder="Username" ng-model="user.username" required>
+                    </div>
+                    <div class="input-group mb-3 border">
+                        <span class="input-group-text px-4 bg-white border-0"><i class="fa-solid fa-lock fs-5"></i></span>
+                        <input type="password" class="form-control py-3 border-0" placeholder="Mật khẩu" ng-model="user.password" required>
+                    </div>
+                    <div class="input-group mb-3 border">
+                        <span class="input-group-text px-4 bg-white border-0"><i class="fa-solid fa-lock fs-5"></i></span>
+                        <input type="password" class="form-control py-3 border-0" placeholder="Nhập lại mật khẩu" ng-model="repassword" required>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-login text-uppercase fw-bold py-2" type="submit" ng-click="onAdd()">Đăng ký</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
